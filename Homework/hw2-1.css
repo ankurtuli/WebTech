@@ -1,0 +1,7 @@
+table {width: 70%; margin-right: auto; margin-left: auto; font-family: Arial, Helvetica, sans-serif; border: 3px solid black; margin-top: 10px; margin-bottom: 10px; background-color: silver; color: navy; text-align: center}
+tr, td {border:2px solid black; text-align: center}
+img {padding: 6px;}
+.highlighted {background-color: lime}
+.Headings {background-color: yellow}
+caption {font-size: xx-large}
+.Description {font-style: italic; font-weight: bold; background-color: white; margin-right: auto; margin-left: auto}
