@@ -12,10 +12,13 @@
             body {
                 text-align: center;
             }
+
+
         </style>
+        
         <script type="text/javascript">
-            function enlarge(){
-                let i = document.getElementById("map");
+            function enlarge(pic){
+                let i = document.getElementById(pic);
                 let w = i.width;
                 //alert(w);
                 i.width = w * (1 + 0.5);
@@ -24,12 +27,20 @@
 
             };
 
-            function shrink(){
-                let i = document.getElementById("map");
+            function shrink(pic){
+                let i = document.getElementById(pic);
                 let w = i.width;
                 i.width = w / (1 + 0.5);
                 i.style.border = "none";
 
+            };
+
+            function check(){
+                let i = document.getElementById(pic);
+                let w = i.width;
+                alert(w);
+
+            
             }
 
 
@@ -40,13 +51,17 @@
 
         <h2> Manipulating Styles and Images </h2>
 
-        <p><img src="images/usa.png" alt="Image goes here" title="map of USA" width="400" onmouseover="enlarge()" onmouseout="shrink()" id="map"></p>
+    <button onclick="check()">Check X</button>
+
+        <p><img src="images/usa.png" alt="Image goes here" title="map of USA" width="400" onmouseover="enlarge(this.id)" onmouseout="shrink(this.id)" id="map"></p>
 
         <hr>
 
         <p><img src="images/man.png" onmouseover="enlarge(this.id)"
         onmouseout="shrink(this.id)" id="second"></p>
 
+        <p><img src="images/Beyonce.jpg" width="400px" onmouseover="enlarge(this.id)"
+            onmouseout="shrink(this.id)" id="beyonce"></p>
     </body>
 
 </html>
