@@ -33,10 +33,79 @@
                 height: 50px;
                 width: 140px
             }
+            .animal {margin-right: 20px;
+                background-color: White;
+                height: 50px;
+                width: 140px
+                }
+
+            div {
+                text-align: center
+
+            }    
         </style>
 
         <script type="text/javascript">
 
+            function showAnimal(animal) {
+                if(animal == "germanshepherd") {
+                    document.getElementById("animalImage").src = "images/shepherd.jpg";
+                    document.getElementById("animalImage").style.border = "5px solid yellow";
+                    document.getElementById("animalName").innerHTML = "German Shepherd";
+                    document.getElementById("germanshepherd").style.background = "silver";
+                    document.getElementById("penguin").style.background = "white";
+                    document.getElementById("snowleopard").style.background = "white";
+                    document.getElementById("lynx").style.background = "white";
+
+                }
+                else if(animal == "penguin") {
+                    document.getElementById("animalImage").src = "images/penguin.jpg";
+                    document.getElementById("animalImage").style.border = "5px solid red";
+                    document.getElementById("animalName").innerHTML = "Penguin";
+                    document.getElementById("penguin").style.background = "silver";
+                    document.getElementById("germanshepherd").style.background = "white";
+                    document.getElementById("snowleopard").style.background = "white";
+                    document.getElementById("lynx").style.background = "white";
+
+
+                }
+                else if(animal == "snowleopard") {
+                    document.getElementById("animalImage").src = "images/snowleopard.jpg";
+                    document.getElementById("animalImage").style.border = "5px solid green";
+                    document.getElementById("animalName").innerHTML = "Snow Leopard";
+                    document.getElementById("snowleopard").style.background = "silver";
+                    document.getElementById("germanshepherd").style.background = "white";
+                    document.getElementById("penguin").style.background = "white";
+                    document.getElementById("lynx").style.background = "white";
+
+                }
+                else if(animal == "lynx") {
+                    document.getElementById("animalImage").src = "images/lynx.jpg";
+                    document.getElementById("animalImage").style.border = "5px solid lime";
+                    document.getElementById("animalName").innerHTML = "Lynx";
+                    document.getElementById("lynx").style.background = "silver";
+                    document.getElementById("germanshepherd").style.background = "white";
+                    document.getElementById("snowleopard").style.background = "white";
+                    document.getElementById("penguin").style.background = "white";
+
+                }
+
+
+            }
+
+            function enlarge(){
+                let i = document.getElementById("animalImage");
+                let w = i.width;
+                i.width = w * (1 + 0.75);
+
+            }
+
+            function shrink(){
+                let i = document.getElementById("animalImage");
+                let w = i.width;
+                i.width = w / (1 + 0.75);
+
+            }
 
       
         
@@ -45,16 +114,18 @@
     </head>
 
     <body>
-        <h1> Show Animal Name Here</h1>
+        <div><h1 id="animalName"> Show Animal Name Here</h1></div>
         <p class="cent">
-            <img id="animalImage" src="" alt="Image Goes Here" title="Animal Name" />
+            <div><img onmouseover="enlarge(this.id)" onmouseout="shrink(this.id)" id="animalImage" src="" alt="Image Goes Here" title="Animal Name" class="animalPicture"></div>
         </p>
-        <!-- <img src="images/shepherd.jpg"> -->
         <p class="cent">
-            <button onclick="showAnimal()" id="germanshepherd">German Shepherd</button>
-            <button onclick="showAnimal()" id="penguin">Penguin</button>
-            <button onclick="showAnimal()" id="snowleopard">Snow Leopard</button>
-            <button onclick="showAnimal()" id="lynx">Lynx</button>
+            <button onclick="showAnimal(this.id)" class="animal" id="germanshepherd">German Shepherd</button>
+
+            <button onclick="showAnimal(this.id)" class="animal" id="penguin">Penguin</button>
+
+            <button onclick="showAnimal(this.id)" class="animal" id="snowleopard">Snow Leopard</button>
+
+            <button onclick="showAnimal(this.id)" class="animal" id="lynx">Lynx</button>
         </p>
         <p id="inst">The homework is graded out of 25 points. Please create the functionality, using JavaScript, to do the following:</p>
         <ul>

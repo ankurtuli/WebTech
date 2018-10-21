@@ -39,15 +39,22 @@
 
         <script type="text/javascript">
         
-        function change() {
-            let x = this.id
-            if(x == ("green-circle"))
-            document.getElementById("green-circle").style.backgroundColor = "olive";
+        function change(circle) {
+            if(circle == "green-circle"){
+            document.getElementById("green-circle").style.backgroundColor = "DarkGreen";
             document.getElementById("header2").innerHTML = "You just clicked green circle";
-
-
+            document.getElementById("blue-circle").style.backgroundColor = "Aqua";
+            document.getElementById("red-circle").style.backgroundColor = "IndianRed";}
+            if(circle == "blue-circle"){
+            document.getElementById("green-circle").style.backgroundColor = "Lime";
+            document.getElementById("blue-circle").style.backgroundColor = "Navy";
+            document.getElementById("red-circle").style.backgroundColor = "IndianRed";
+            document.getElementById("header2").innerHTML = "You just clicked blue circle";}
+            if(circle == "red-circle"){
 
         }
+        }
+        
         
 
         </script>
