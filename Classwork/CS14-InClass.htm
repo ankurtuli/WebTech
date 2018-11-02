@@ -23,13 +23,41 @@
 			}
 		</style>
         <script type="text/javascript">
-            function add(){
+            
+			function add(){
                 let f = document.getElementById("calc");
                 let x = f.num1.value;
                 let y = f.num2.value;
                 x = parseFloat(x);
                 y = parseFloat(y);
                 f.result.value = x + y;
+            }
+
+			 function subtract(){
+                let f = document.getElementById("calc");
+                let x = f.num1.value;
+                let y = f.num2.value;
+                x = parseFloat(x);
+                y = parseFloat(y);
+                f.result.value = x - y;
+            }
+
+			 function multiply(){
+                let f = document.getElementById("calc");
+                let x = f.num1.value;
+                let y = f.num2.value;
+                x = parseFloat(x);
+                y = parseFloat(y);
+                f.result.value = x * y;
+            }
+
+			 function divide(){
+                let f = document.getElementById("calc");
+                let x = f.num1.value;
+                let y = f.num2.value;
+                x = parseFloat(x);
+                y = parseFloat(y);
+                f.result.value = x / y;
             }
 		</script>
 	</head>
@@ -41,10 +69,10 @@
 			<p>Your Result: <input name="result" size="10" type="text"></p>
 			<p>Number 1: <input name="num1" size="5" type="text"> Number 2: <input name="num2" size="5" type="text"></p>
 			<p>
-				<input value="ADD" type="button">
-				<input value="SUB" type="button">
-				<input value="MULT" type="button">
-				<input value="DIV" type="button"> <br><br>
+				<input onclick="add(this.id)" value="ADD" type="button">
+				<input onclick="subtract(this.id)" value="SUB" type="button">
+				<input onclick="multiply(this.id)" value="MULT" type="button">
+				<input onclick="divide(this.id)" value="DIV" type="button"> <br><br>
 				<input id="clr" value="Clear" name="reset" type="reset">
 			</p>
 
