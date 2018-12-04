@@ -33,17 +33,36 @@
         </style>
         <script>
 
-            function calc() {
-            let first = document.getElementById("firstNum");
-            let second = document.getElementById("secondNum");
+             function sum() {
+            let myForm = document.getElementById("form1");
+            let from = myForm.from.value;
+            let to = myForm.to.value;
+            if (from == "" || to == "" || isNaN(from) || isNaN(to)) {
+                alert("You should enter two integers");
+            }
             let result = 0;
-                for (let i = first.value; i <= second.value;) {
+            if (myForm.types.value == "all") {
+                for (let i = parseInt(from); i <= parseInt(to); i++) {
                     result += i;
                 }
-                document.getElementById("sum").innerHTML = result;
-
-                return false
             }
+            else if (myForm.types.value == "even") {
+                for (let i = parseInt(from); i <= parseInt(to); i++) {
+                    if (i % 2 == 0) {
+                        result += i;
+                    }
+                }
+            }
+            else if (myForm.types.value == "odd") {
+                for (let i = parseInt(from); i <= parseInt(to); i++) {
+                    if (i % 2 == 1) {
+                        result += i;
+                    }
+                }
+            }
+            document.getElementById("result").innerHTML = result;
+            return false;
+        }
         </script>
     </head>
 
@@ -61,19 +80,20 @@
         </p>
         <form id="form1">
             <p>
-                From: <input id="firstNum" type="text" name="from" size="10" /> To: <input id="secondNum" type="text" name="to" size="10">
+                From: <input type="text" name="from" size="10"/> To: <input type="text" name="to" size="10">
             </p>
             <p>
                 Please select (for extra points):<br><br> all integers<input type="radio" name="types" value="all"> even
                 numbers
-                <input type="radio" name="types" value="even"> odd numbers<input type="radio" name="types" value="odd"><br><br>
-
+                <input type="radio" name="types" value="even"> odd numbers<input type="radio" name="types"
+                                                                                 value="odd"><br><br>
+    
             </p>
             <p>
-                <input onclick="return numberSum()" type="submit" name="Sum" value="SUM">
+                <input type="submit" name="Sum" value="SUM" onclick="return sum();">
                 <input type="reset" name="reset" value="CLEAR">
             </p>
-            <p>The sum is <span id="sum"></span>.</p>
+            <p>The sum is <span id="result"></span>.</p>
         </form>
 
     </body>
